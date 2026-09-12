@@ -1,21 +1,75 @@
-# Multi-Dimensional Analysis of China's Tier-One Cities
+# Multi-Dimensional Analysis of China’s Tier-One Cities
 
-An end-to-end data collection and visualization project comparing **Beijing, Shanghai, Guangzhou, and Shenzhen** across four connected dimensions: housing, employment, urban mobility, and consumer preferences.
+<p align="center">
+  An end-to-end data collection and visualization project comparing <strong>Beijing, Shanghai, Guangzhou, and Shenzhen</strong> across housing, employment, urban mobility, and consumer preferences.
+</p>
+
+<p align="center">
+  <code>Python</code> · <code>R</code> · <code>Web Scraping</code> · <code>GIS</code> · <code>Machine Learning</code> · <code>Interactive Visualization</code>
+</p>
 
 Developed as a final project for the Data Collection and Visualization course at Shanghai Jiao Tong University, under the academic guidance of Associate Professor Haifeng Xu.
 
-## Project Overview
+## Explore the four modules
 
-Rapid urban development cannot be understood through a single indicator. This project combines large-scale web data, geospatial information, statistical analysis, machine learning, and interactive visualization to build a richer profile of China's four largest first-tier cities.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="housing_market_analysis/"><img src="docs/images/housing_district_inventory.png" alt="Housing inventory by district" width="100%"></a>
+      <h3><a href="housing_market_analysis/">Housing Market</a></h3>
+      <p>Listing-level prices, housing attributes, regression, clustering, and geospatial comparison across cities and districts.</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="employment_market_analysis/"><img src="docs/images/employment_city_comparison.png" alt="Salary and employee benefit comparison" width="100%"></a>
+      <h3><a href="employment_market_analysis/">Employment Market</a></h3>
+      <p>Recruitment activity, normalized salaries, employee benefits, district patterns, networks, and Sankey diagrams.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="urban_mobility_analysis/"><img src="docs/images/subway_station_comparison.png" alt="Subway station count comparison" width="100%"></a>
+      <h3><a href="urban_mobility_analysis/">Urban Mobility</a></h3>
+      <p>Subway accessibility, network structure, station distribution, live traffic layers, and road-congestion analysis.</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="consumer_preference_analysis/"><img src="docs/images/consumer_review_distribution.png" alt="Regional distribution of product reviews" width="100%"></a>
+      <h3><a href="consumer_preference_analysis/">Consumer Preferences</a></h3>
+      <p>More than 50,000 JD.com reviews analyzed through sentiment scoring, RFM, PCA, regional mapping, and text visualization.</p>
+    </td>
+  </tr>
+</table>
 
-| Module | Core question | Main methods |
-| --- | --- | --- |
-| [Housing Market](housing_market_analysis/) | How do prices and housing characteristics vary across and within cities? | Web scraping, geocoding, regression, clustering, geospatial visualization |
-| [Employment Market](employment_market_analysis/) | How do job supply, salary, and employee benefits differ by city and district? | Web scraping, text processing, outlier detection, heatmaps, Sankey diagrams |
-| [Urban Mobility](urban_mobility_analysis/) | How accessible are subway systems, and how severe is road congestion? | API collection, GIS processing, network and time-series visualization |
-| [Consumer Preferences](consumer_preference_analysis/) | How do purchasing behavior and review sentiment vary across regions? | Browser automation, sentiment analysis, RFM, PCA, word clouds |
+## Project overview
 
-## Repository Structure
+Rapid urban development cannot be understood through a single indicator. This project connects four perspectives to build a richer profile of China’s tier-one cities:
+
+| Dimension | Core question | Main methods |
+|---|---|---|
+| Housing | How do prices and housing characteristics vary across and within cities? | Web scraping, geocoding, regression, clustering, geospatial visualization |
+| Employment | How do job supply, salary, and employee benefits differ by city and district? | Web scraping, text processing, outlier detection, heatmaps, Sankey diagrams |
+| Mobility | How accessible are subway systems, and how severe is road congestion? | API collection, GIS processing, network and time-series visualization |
+| Consumer preferences | How do purchasing behavior and review sentiment vary across regions? | Browser automation, sentiment analysis, RFM, PCA, word clouds |
+
+## End-to-end workflow
+
+```mermaid
+flowchart LR
+    A[Collect<br/>listings · jobs · transit · reviews] --> B[Clean<br/>text · units · geography · outliers]
+    B --> C[Enrich<br/>coordinates · sentiment · features]
+    C --> D[Analyze<br/>regression · clustering · RFM · PCA]
+    D --> E[Visualize<br/>maps · networks · Sankey · dashboards]
+```
+
+## Selected outputs
+
+- Interactive housing-price distributions, price–area relationships, Sankey diagrams, and city maps
+- Cross-city salary and benefit comparisons, spatial views, network diagrams, and occupation flows
+- Subway network and station-count comparisons alongside time-based road-congestion analysis
+- Regional review sentiment, membership patterns, customer segments, maps, radar charts, and word clouds
+
+Several interactive visualizations are committed as standalone HTML files and can be opened directly after cloning the repository.
+
+## Repository structure
 
 ```text
 .
@@ -23,30 +77,26 @@ Rapid urban development cannot be understood through a single indicator. This pr
 ├── employment_market_analysis/    # Recruitment, salary, and benefits analysis
 ├── urban_mobility_analysis/       # Subway networks and road congestion
 ├── consumer_preference_analysis/  # JD.com reviews and regional preferences
-├── docs/original_reports_zh/      # Original Chinese course reports
+├── docs/
+│   ├── images/                    # README visual previews
+│   └── original_reports_zh/       # Original Chinese course reports
 ├── requirements.txt
 └── LICENSE
 ```
 
 Each module contains its own README with its research design, workflow, file guide, and usage notes.
 
-## Data Pipeline
+## Technology stack
 
-1. **Collect** public listings, recruitment posts, transit data, traffic information, and product reviews.
-2. **Clean** inconsistent text fields, missing values, units, geographic labels, and outliers.
-3. **Enrich** observations with coordinates, regional indicators, sentiment scores, and engineered features.
-4. **Analyze** cross-city differences using descriptive statistics, regression, clustering, RFM, and PCA.
-5. **Visualize** findings through maps, distributions, networks, Sankey diagrams, radar charts, and interactive HTML outputs.
+| Area | Tools |
+|---|---|
+| Languages | Python, R |
+| Collection | Requests, Beautiful Soup, Parsel, DrissionPage |
+| Analysis | pandas, NumPy, scikit-learn, statsmodels, SnowNLP, jieba |
+| Visualization | Matplotlib, Seaborn, Plotly, Pyecharts, Folium, GeoPandas, Cartopy, NetworkX, WordCloud |
+| Geospatial | AMap data and APIs, ArcGIS-compatible shapefiles |
 
-## Technology Stack
-
-**Languages:** Python, R  
-**Collection:** Requests, Beautiful Soup, Parsel, DrissionPage  
-**Analysis:** pandas, NumPy, scikit-learn, statsmodels, SnowNLP, jieba  
-**Visualization:** Matplotlib, Seaborn, Plotly, Pyecharts, Folium, GeoPandas, Cartopy, NetworkX, WordCloud  
-**Geospatial tools:** AMap data and APIs, ArcGIS-compatible shapefiles
-
-## Getting Started
+## Getting started
 
 ```bash
 git clone https://github.com/Yiyang-3/china-tier-one-city-analysis.git
@@ -55,20 +105,18 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Open the module README that matches the analysis you want to reproduce. Several collection scripts require live websites, browser sessions, API credentials, or request headers. Pre-collected datasets and exported visualizations are included so the work can still be reviewed without rerunning every scraper.
+Open the README inside the module you want to explore. Several collection scripts require live websites, browser sessions, API credentials, or current request headers. Pre-collected datasets and exported visualizations are included so the project can still be reviewed without rerunning every scraper.
 
-If a collector requires an authenticated session, copy `.env.example` to `.env` and supply your own current session values locally. Real cookies and credentials must never be committed.
+If a collector requires an authenticated session, store current session values locally and never commit cookies or credentials.
 
-## Responsible Use
+## Data sources and responsible use
 
-The data was collected from publicly accessible pages for academic analysis. Website structures and access policies may change. Before rerunning a scraper, review the platform's current terms, robots policy, rate limits, and privacy requirements. Do not use this repository for commercial data extraction.
+- [Lianjia](https://www.lianjia.com/) second-hand housing listings
+- [58.com](https://www.58.com/) recruitment listings
+- [AMap](https://www.amap.com/) subway and traffic services
+- [JD.com](https://www.jd.com/) product pages and reviews
 
-## Data Sources
-
-- [Lianjia second-hand housing listings](https://www.lianjia.com/)
-- [58.com recruitment listings](https://www.58.com/)
-- [AMap subway and traffic services](https://www.amap.com/)
-- [JD.com product pages and reviews](https://www.jd.com/)
+The data was collected from publicly accessible pages for academic analysis. Website structures, terms, robots policies, and rate limits may change. Review current requirements before rerunning any collector and do not use this repository for commercial data extraction.
 
 ## License
 
