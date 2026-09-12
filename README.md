@@ -1,7 +1,7 @@
 # Multi-Dimensional Analysis of China’s Tier-One Cities
 
 <p align="center">
-  An end-to-end data collection and visualization project comparing <strong>Beijing, Shanghai, Guangzhou, and Shenzhen</strong> across housing, employment, urban mobility, and consumer preferences.
+  An end-to-end data collection and visualization project comparing <strong>Beijing, Shanghai, Guangzhou, and Shenzhen</strong> across consumer preferences, employment, housing, and urban mobility.
 </p>
 
 <p align="center">
